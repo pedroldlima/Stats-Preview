@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; color: #fff; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+   
+    :root{
+--blue-main: hsl(233, 47%, 7%);
+--blue-card: hsl(244, 38%, 16%);
+--soft-violet: hsl(277, 64%, 61%);
+--white-heading: hsl(0, 0%, 100%);
+--white-paragraph: hsla(0, 0%, 100%, 0.75);
+--white-stat: hsla(0, 0%, 100%, 0.6)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: var(--blue-main);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    font-size: 15px;
+}
+.container{
+    max-width: 1020px;
+    margin: 0 auto;
+}
+.content{
+    background-color: var(--blue-card);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: .5rem;
+    overflow: hidden;
+    margin: 2rem;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.image{
+    position: relative;
+}
+/*overlay*/
+.image::after{
+   position: absolute;
+   content: '';
+   height: 100%;
+   width: 100%; 
+   left: 0;
+   top: 0; 
+   background-color: var(--soft-violet);
+   opacity: 55%;
+}
+.text{
+    padding: 13%;    
+}
+h1{
+    color: var(--white-heading);
+    padding-bottom: 1rem;
+}
+h1 span{
+    color: var(--soft-violet);
+    font-weight: 700;
+    padding-bottom: 22px;
+}
+p{
+    color: var(--white-paragraph);
+    line-height: 1.6;
+}
+ul{
+    display: flex;
+    justify-content:space-between;
+    text-transform: uppercase;
+    padding-top: 60px;
+    font-family: 'Lexend Deca', sans-serif;
+    list-style: none;
+}
+li span{
+    display: block;
+    color: var(--white-heading);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}   
+li{
+    color: var(--white-stat);
+}
+
+@media (max-width:625px){
+    body{
+        text-align: center;
+    }
+    .content{
+        grid-template-columns: 1fr;
+    }
+    .image{
+        order: -1;
+    }
+    .text{
+        padding: 12% 8%;
+        size:35px;
+    }
+    h1{
+        font-size: 25px;
+        padding-bottom: 1rem;
+    }
+    ul{
+        flex-direction: column ;
+        padding-top: 30px;
+    }
+    ul li{
+        margin-top: 20px;
+        line-height: 1rem;
+    }
+}
+
+
+</style>
+</head>
+<body>
+<main class="container">
+<div class="content">
+  <div class="text">
+    <h1>Get <span>insights</span> that help your business grow.</h1>
+    <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+      experience, and overall efficiency.</p>
+    <ul>
+     <li><span>10k+</span>companies</li>
+     <li><span>314</span>templates</li>
+     <li><span>12m+</span>queries</li>
+     </ul>      
+  </div> 
+   
+  <div class="image">
+    <img src="./images/image-header-desktop.jpg" alt=""> 
+  </div>
+  
+</div>  
+</main>
+</body>
+</html>
